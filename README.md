@@ -5,7 +5,7 @@
 
 ## :rocket: Introduction
 
-    Bien sûr ! "my_bird" est un projet en CSFML conçu pour aider les débutants en
+     "my_bird" est un projet en CSFML conçu pour aider les débutants en
     programmation à se familiariser avec le langage C et la librairie graphique
     CSFML.
 
