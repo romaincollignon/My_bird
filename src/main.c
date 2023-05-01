@@ -71,6 +71,9 @@ void display(main_s *my_game)
     sfVector2f pos = { x, my_game->y }; // Nouvelle position du sprite
     sfSprite_setPosition(my_game->sprite, pos); // Applique la nouvelle position du sprite
 
+    int resultat = additionner(2, 5);
+
+
     sfRenderWindow_drawSprite(my_game->window, my_game->background, NULL); // Affichage Fond
     sfRenderWindow_drawSprite(/* Fenêtre */, /* Sprite */, NULL); // Affichage Sprite
 }
