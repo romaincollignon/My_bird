@@ -5,14 +5,14 @@
 
 #include "my_bird.h"
 
-void init_structure(main_s *my_game, int nb_arg, char **tab_arg) // Fonction Initialisation structure
+void init_structure(main_s *my_game, int nb_arg, char **tab_arg) // Fonction initialisation structure
 {
     my_game->window = sfRenderWindow_create((sfVideoMode) {800, 600}, "my_bird", sfClose, NULL);
     sfRenderWindow_setFramerateLimit(my_game->window, 120);
     /* ETAPE 4 */
 
     if (nb_arg == /* 12 % 5 = ? */) {
-        my_game->speed_sprite = /* fonction qui permet de passer un "char *" et "int" */(tab_arg[1]);
+        my_game->speed_sprite = /* fonction qui permet de passer un "char *" et "int" (s'aider d'internet) (la fonction commence par "at..") */(tab_arg[1]);
     } else {
         my_game->speed_sprite = /* Vitesse si jamais l'on ne donne pas de vitesse */;
     }
@@ -46,13 +46,13 @@ void init_structure(main_s *my_game, int nb_arg, char **tab_arg) // Fonction Ini
 void update(main_s *my_game)
 {
     while (sfRenderWindow_pollEvent(my_game->window, &my_game->event)) {
-        if (my_game->event.type == sfEvtClosed) // Si l'utilisateur clique sur la croix (bouton fermer) il va ferme la fenêtre
+        if (my_game->event.type == sfEvtClosed) // Si l'utilisateur clique sur la croix (bouton fermer) il va fermer la fenêtre
             sfRenderWindow_close(my_game->window);
         if (click_in_sprite(my_game) == /* Vrai ou faux ?*/) {
             /* ETAPE 3 */
             exit(0);
         }
-        /* ETAPE 6 */
+        /* ETAPE 8 */
     }
 }
 
@@ -64,7 +64,7 @@ void display(main_s *my_game)
     x += speed; // Incrémente la position actuelle du sprite de sa vitesse de déplacement
     if (x >= 800.0f) // Si le sprite a dépassé la fin de l'écran
     {
-        x = 0.0f; // Ramène le sprite au début de l'écra
+        x = 0.0f; // Ramène le sprite au début de l'écran
         /* Ajouter + 1 à my_game->nb_passage */
         /* ETAPE 5 */
     }
@@ -85,7 +85,7 @@ void display(main_s *my_game)
 
 int main(int nb_arg, char **tab_arg)
 {
-    main_s *my_game = malloc(sizeof(main_s)); // Allocation de mémoire
+    main_s *my_game = malloc(sizeof(main_s)); // Allocation de mémoires
     init_structure(my_game, nb_arg, tab_arg);
     while (sfRenderWindow_isOpen(my_game->window)) {
         sfRenderWindow_display(my_game->window); // Affichage de la fenêtre
