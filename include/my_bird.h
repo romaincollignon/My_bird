@@ -40,6 +40,7 @@ typedef struct {
     float time;
     sfClock *clock;
     sfIntRect rect;
+    int speed_sprite;
     int x;
     int y;
     int nb_passage;
